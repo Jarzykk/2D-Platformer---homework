@@ -6,6 +6,7 @@ public class CoinSpawner : MonoBehaviour
 {
     [SerializeField] private int _coinsAmountToSpawn;
     [SerializeField] private GameObject _coin;
+    [SerializeField] private float _distanceBetweenCoinsAfterSpawn = 0.5f;
 
     private Vector3 _coinsPosition;
 
@@ -19,7 +20,7 @@ public class CoinSpawner : MonoBehaviour
         for (int i = 0; i < amountToSpawn; i++)
         {
             Instantiate(_coin, _coinsPosition, Quaternion.identity);
-            _coinsPosition.x += 0.5f;
+            _coinsPosition.x += _distanceBetweenCoinsAfterSpawn;
         }
     }
 }
